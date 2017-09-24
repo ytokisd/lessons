@@ -3,4 +3,4 @@ ADD . /code
 WORKDIR /code
 RUN pip install -r requirements.txt
 RUN chmod 777 app.py
-#CMD ["python", "app.py"]
+CMD ["python", "app.py"]
