@@ -1,0 +1,13 @@
+version: '2'
+volumes:
+  redisvol:
+services:
+  web:
+    build: .
+    command: python app.py
+    ports:
+     - "3050:5000"
+  redis:
+    image: "redis:alpine"
+    volumes:
+       - redisvol:/data
