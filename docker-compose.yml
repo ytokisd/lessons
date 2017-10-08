@@ -15,5 +15,11 @@ services:
      - "3050:5000"
   redis:
     image: "redis:alpine"
+     logging:
+        driver: "awslogs"
+        options:
+           awslogs-region: "us-east-2"
+           awslogs-group: "newlog"
+           awslogs-stream: "redis"
     volumes:
        - redisvol:/data
