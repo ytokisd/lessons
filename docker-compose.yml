@@ -5,6 +5,12 @@ services:
   web:
     build: .
     command: python app.py
+    logging:
+        driver: "awslogs"
+        options:
+           awslogs-region: "us-east-2"
+           awslogs-group: "newlog"
+           awslogs-stream: "flaskapp"
     ports:
      - "3050:5000"
   redis:
